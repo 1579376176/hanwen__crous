@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function Person() {}
+var person = new Person() 
+console.dir(Person)
+console.dir(person.__proto__)
+console.log(person.__proto__ === Person.prototype) 
+console.log(Person === Person.prototype.constructor)
+    </script>
+</body>
+</html>
