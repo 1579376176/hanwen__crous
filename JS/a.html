@@ -9,10 +9,23 @@
     <script>
 function Person() {}
 var person = new Person() 
-console.dir(Person)
-console.dir(person.__proto__)
-console.log(person.__proto__ === Person.prototype) 
-console.log(Person === Person.prototype.constructor)
+var value = 1;
+
+console.log( Object.prototype.toString.call(value));
+function foo () {
+  console.log(value);
+}
+
+function bar () {
+  var value = 2;
+  foo();
+}
+
+bar();
+// console.dir(Person)
+// console.dir(person.__proto__)
+// console.log(person.__proto__ === Person.prototype) 
+// console.log(Person === Person.prototype.constructor)
     </script>
 </body>
 </html>
