@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //
+        var transpose = function(matrix) {
+            function createArrTwo(num1, num2, data) {
+                let arr = new Array(num1)
+                for (let i = 0; i < num1; ++i) {
+                    arr[i] = new Array(num2)
+                    for (let x = 0; x < num2; ++x) {
+                        arr[i][x] = data
+                    }
+                }
+                return arr
+            }
+            let m = createArrTwo(matrix[0].length, matrix.length, 0)
+
+            for (var i = 0; i < matrix.length; i++) {
+                for (var j = 0; j < matrix[i].length; j++) {
+                    m[j][i] = matrix[i][j];
+                }
+            }
+            return m;
+        };
+    </script>
+</body>
+
+</html>
