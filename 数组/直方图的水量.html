@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var trap = function(height) {
+            let arr = JSON.parse(JSON.stringify(height));
+            console.log("arr:" + arr);
+            arr = arr.sort(function compare(a, b) {
+                if (a < b) {
+                    return -1;
+                }
+                if (a > b) {
+                    return 1;
+                }
+                return 0;
+            });
+            let biggest = arr[arr.length - 1];
+            let a = 0;
+            let b = 0;
+            let h = 0;
+            //每层
+            for (let i = 0; i < biggest; i++) {
+                //寻找第一层的第一个元素
+                for (let i = 0; i < height.length; i++) {
+                    //第一层第一个元素
+                    if (height[i] > 0) {
+                        //第一个元素变为索引为i的
+                        a = height.indexOf(height[i])
+                        console.log('a:' + a);
+                        break;
+                    }
+                }
+                //寻找第一层最后一个元素
+                for (let j = height.length - 1; j > 0 || j == 0; j--) {
+                    //第一层最后一个元素
+                    if (height[j] > 0) {
+                        b = height.lastIndexOf(height[j])
+                        console.log('b:' + b);
+                        //计算有几个空隙
+                        break;
+                    }
+                }
+                for (let i = a; i < b; i++) {
+                    if (height[i] == 0 || height[i] < 0) {
+                        h = h + 1;
+                        console.log("h:" + h);
+                    }
+                }
+
+
+                for (let i = 0; i < height.length; i++) {
+                    height[i] = height[i] - 1;
+
+                }
+            }
+
+            return h;
+        };
+
+        trap([4, 2, 3]);
+    </script>
+</body>
+
+</html>
