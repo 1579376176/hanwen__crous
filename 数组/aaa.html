@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var NumArray = function(nums) {
+            this.nums = nums
+        };
+
+        /** 
+         * @param {number} i 
+         * @param {number} j
+         * @return {number}
+         */
+        NumArray.prototype.sumRange = function(i, j) {
+            let total = 0
+            for (let k = i; k <= j; k++) {
+                total += this.nums[k]
+            }
+            return total
+        };
+
+        作者： lemon - s1
+        链接： https: //leetcode-cn.com/problems/range-sum-query-immutable/solution/303-qu-yu-he-jian-suo-shu-zu-bu-ke-bian-2kj37/
+            来源： 力扣（ LeetCode）
+        著作权归作者所有。 商业转载请联系作者获得授权， 非商业转载请注明出处。
+    </script>
+</body>
+
+</html>

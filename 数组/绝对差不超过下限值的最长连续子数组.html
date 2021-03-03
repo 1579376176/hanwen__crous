@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * @param {number[]} nums
+         * @param {number} limit
+         * @return {number}
+         */
+        var longestSubarray = function(nums, limit) {
+            let result = 0;
+            let a = 0;
+            let c = [];
+            let m = Math.max(...nums);
+            let n = Math.min(...nums);
+            //如果给定数组的最大值与最小值之差小于等于limit则 最长子数组长度即为它本身的长度
+            if ((m - n) < limit || (m - n) == limit) {
+                return nums.length;
+            } else {
+                for (let k = 0; k < nums.length; k++) {
+                    let b = [];
+                    for (let l = k; l < nums.length; l++) {
+
+                        b.push(nums[l]);
+                        if (Math.max(...b) - Math.min(...b) < limit || Math.max(...b) - Math.min(...b) == limit) {
+                            c.push(b.length)
+                            continue;
+                        }
+                    }
+
+                }
+                c.push(0);
+                return Math.max(...c)
+            }
+
+        };
+    </script>
+</body>
+
+</html>
