@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         给定一个非负整数 num。对于 0 ≤ i ≤ num 范围中的每个数字 i ，计算其二进制数中的 1 的数目并将它们作为数组返回。
+
+        // 示例 1:
+
+        // 输入: 2
+        // 输出: [0,1,1]
+        // 示例 2:
+
+        // 输入: 5
+        // 输出: [0,1,1,2,1,2]
+
+
+        var countBits = function(num) {
+            let a = [];
+            let result = [];
+            let rem;
+            for (let i = 0; i < num + 1; i++) {
+                a[i] = i;
+            }
+            for (let i = 0; i < a.length; i++) {
+                let b = [];
+                let n = 0;
+                while (a[i] > 0) {
+                    rem = Math.floor(a[i] % 2);
+                    b.push(rem);
+                    a[i] = Math.floor(a[i] / 2);
+                }
+                for (let j = 0; j < b.length; j++) {
+                    if (b[j] == 1) {
+                        n = n + 1;
+                    }
+                }
+                result.push(n);
+
+            }
+            return result
+        };
+    </script>
+</body>
+
+</html>
