@@ -1,0 +1,66 @@
+<!-- 是html5标准网页声bai明，原先的是du一串很长的字符zhi串，现在是这个简dao洁形zhuan式，支持html5标准的主流shu浏览器都认识这个声明。 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function createArrayList(size) {
+            var array = [];
+            this.insert = function(item) {
+                array.push(item)
+            };
+
+            this.toString = function() {
+                return array.join();
+            };
+
+            this.selectSort = function() {
+                var length = array.length;
+                var indexMin;
+                for (let i = 0; i < length; i++) {
+                    indexMin = i;
+                    for (let j = i; j < length; j++) {
+                        if (array[j] < array[indexMin]) {
+                            indexMin = j;
+                        }
+                    }
+                    if (i != indexMin) {
+                        swap(i, indexMin)
+                    }
+
+                }
+            }
+
+            function swap(index1, index2) {
+                var aux = array[index1];
+                array[index1] = array[index2];
+                array[index2] = aux;
+            }
+
+
+        }
+
+        function createNonsortArrayList(size) {
+            var array = new createArrayList();
+            for (let i = size; i > 0; i--) {
+                array.insert(i)
+            }
+            return array;
+
+
+        }
+        var a = new createNonsortArrayList(6);
+        console.log(a.toString());
+        a.selectSort();
+        console.log(a.toString());
+    </script>
+</body>
+
+</html>
