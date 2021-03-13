@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+
+<body>
+    <button id='asd'>崔瀚文是</button>
+    <script>
+        function fun() {
+            console.log('崔瀚文大好人哈哈哈');
+
+        }
+
+        //正常防抖
+        // function debounce(fun, wait) {
+        //     let timeout;
+        //     return function() {
+        //         if (timeout) clearTimeout(timeout)
+        //         timeout = setTimeout(() => {
+        //             fun.apply();
+        //         }, wait)
+        //     }
+
+        // }
+        //先立即执行，然后在防抖
+        function debounce(fun, wait) {
+            let timeout;
+            return function() {
+                if (timeout) clearTimeout(timeout)
+                let callNow = !timeout;
+                timeout = setTimeout(() => {
+                    timeout = null;
+                }, wait)
+                if (callNow) {
+                    fun.apply(this);
+                }
+            }
+
+
+        }
+        let a = document.getElementById('asd');
+        a.onclick = debounce(fun, 1000)
+    </script>
+</body>
+
+</html>
