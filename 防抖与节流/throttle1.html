@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttle节流温习</title>
+</head>
+
+<body>
+    <button id="btn">aaa</button>
+    <h1>
+        <div id="btn1"></div>
+    </h1>
+    <script>
+        let aa = 0;
+
+        function a() {
+            document.getElementById('btn1').innerHTML = aa++;
+
+        }
+        //定时器
+        // function throttle(fun, wait) {
+
+        //     let timeout;
+        //     return function() {
+        //         if (!timeout) {
+        //             fun.apply();
+        //             timeout = setTimeout(() => {
+        //                 timeout = null;
+        //             }, wait)
+        //         }
+
+        //     }
+        // }
+        //时间戳
+        function throttle(fun, wait) {
+            let timeout = 0;
+            return function() {
+                let nowDate = Date.now();
+                if (nowDate - timeout > wait) {
+                    fun.apply();
+                    timeout = nowDate;
+                }
+            }
+        }
+        document.getElementById('btn').onclick = throttle(a, 1000);
+    </script>
+</body>
+
+</html>
