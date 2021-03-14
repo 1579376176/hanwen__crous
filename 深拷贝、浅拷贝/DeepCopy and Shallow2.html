@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepCopy</title>
+</head>
+
+<body>
+    <!-- 2021年3月14日09:27:02 复习 -->
+    <script>
+        //深拷贝方法
+        a = [1, 2, 3, [4, 5, 6]]
+        let b = JSON.parse(JSON.stringify(a))
+        b[3][2] = 99
+        console.log(a);
+        //实现一个深拷贝
+        function deepCopy(target, source) {
+            if (!source || typeof source !== 'object') {
+                for (var key of source) {
+                    if (source.hasOwnProperty(key)) {
+                        if (source[key] && typeof source[key] == 'object') {
+                            target = Array.isArray(source[key]) ? [] : {}
+                            deepCopy(target, source)
+                        } else {
+                            target[key] = source[key]
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
