@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttle</title>
+</head>
+
+<body>
+    <script>
+        aa = new Boolean();
+        console.log(aa);
+        //节流（定时器）
+        function throttle(fun, wait) {
+            let timeout;
+            return function() {
+                if (!timeout) {
+                    fun.apply()
+                    timeout = setTimeout(() => {
+                        timeout = null;
+                    })
+                }
+            }
+
+        }
+        //节流（时间戳）
+        function throttle(fun, wait) {
+            let lastTime;
+            return function() {
+                let nowTime = Date.now()
+                if (nowTime - lastTime > wait) {
+                    fun.apply();
+                    lastTime = nowTime;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

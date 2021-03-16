@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX原理</title>
+</head>
+<body>
+    <script>
+        //创建对象
+        var xmlhttp;
+        
+        //处理兼容对象
+        if(window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+        else xmlhttp = ActiveXObject('Microsoft.XMLHTTP')
+
+        //发送请求
+        //GET
+        xmlhttp.open('GET',url,true);
+        xmlhttp.send();
+        //POST
+        xmlhttp.open('POST',url,true);
+        xmlhttp.setRequestHeader();
+        //post传参
+        xmlhttp.send();
+
+        //服务器响应
+        xmlhttp.onreadystatechange = function () {
+            if(xmlhttp.readyState ==4&&xmlhttp.Status == 200)
+            {
+                document.getElementById('').innerHTML = xmlhttp.responseText;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
