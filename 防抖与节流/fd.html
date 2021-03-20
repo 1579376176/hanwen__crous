@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id='but'>add</button>
+    </div>
+    <script>
+        let a = 1;
+
+        function func() {
+            a = a + 1;
+            console.log(a);
+
+        }
+
+        function debounce(fun, wait) {
+            let timeout;
+            return function() {
+                if (timeout) {
+                    clearTimeout(timeout);
+                }
+                timeout = setTimeout(() => {
+                    fun.apply();
+                }, wait);
+
+            }
+
+        }
+        let c = document.getElementById('but');
+        c.onclick = debounce(func, 500)
+    </script>
+</body>
+
+</html>
