@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function a(str1, str2) {
+            var s1 = str1.split('');
+            var s2 = str2.split('');
+            let aa = 0;
+            let c = [];
+            for (let i = 0; i < s1.length; i++) {
+                for (let j = 0; j < s2.length; j++) {
+                    let q = i;
+                    let w = j;
+                    if (s1[q] == s2[w]) {
+                        aa++;
+                        q++;
+                        w++;
+                    }
+                    var b = aa;
+                    if (aa > 0) {
+                        c.push(b);
+                        aa = 0;
+                    }
+                    i++;
+                }
+            }
+            console.log(c);
+            let l = 0;
+            for (let k = 0; k < c.length; k++) {
+                if (l < c[k]) {
+                    l = c[k]
+                }
+            }
+            console.log(l);
+            return l;
+        }
+        a('asdfasdfgwertyu', 'asdfwertyughasd');
+        // let a = prompt()
+        // let b = prompt()
+        // let c = []
+        // for(let i=0;i<a;i++){
+        //     let d=[]
+        //     for(let j=0;j<b;j++){
+        //         let aa = prompt()
+        //         d.push(aa)
+        //     }
+        //     c[i].push(d)
+        // }
+        // for(let i=0;i<c.length;i++){
+        //     let d =0;
+        //     for(let j=0;j<c[i].length;j++){
+
+        //        d=d+c[i][j]
+        //        if(c[i][j-1]){
+
+        //        }
+        //     }
+        // }
+        // let b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        // function a(arr) {
+        //     let a1 = [];
+        //     let a2 = [];
+
+        //     let res = 1;
+        //     for (let i = 0; i < arr.length; i++) {
+        //         res++;
+        //         if (res % 2 == 0) {
+        //             a1.push(arr[i])
+        //         } else {
+        //             a2.push(arr[i])
+        //         }
+        //     }
+        //     console.log(a1);
+        //     a2.reverse();
+        //     console.log(a2);
+        //     let c = [...a1, ...a2].join(',')
+        //     console.log(c);
+        // }
+        // a(b);
+    </script>
+</body>
+
+</html>
