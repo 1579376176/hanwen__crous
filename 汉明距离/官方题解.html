@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         这里采用的是一种计数法，比较简单粗暴，规则如下：
+
+        // 通过 toString(2)toString(2) ，我们可以将数字转换为对应的二进制数的字符串。
+        // xx, yy 长度可能不一致，我们需要在较短的数前面补 00 。
+        // 对比两个数字字符串，统计多少位不一致即可。
+
+
+        //  示例代码
+        // Javascript
+
+        var hammingDistance = function(x, y) {
+            x = x.toString(2);
+            y = y.toString(2);
+            let maxLength = Math.max(x.length, y.length);
+            x = x.padStart(maxLength, 0);
+            y = y.padStart(maxLength, 0);
+            let ans = 0;
+            for (let i = 0; i < maxLength; i++) {
+                if (x[i] !== y[i]) ans++;
+            }
+            return ans;
+        };
+    </script>
+</body>
+
+</html>

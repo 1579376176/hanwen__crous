@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //思想 先把两位分别转换二进制存入数组a和b，然后 比对每个数组的不一样的地方
+        //这里有不对的地方，有的数组长，有的短，长的多余部分是1 的才计数，0的不计数
+        //要判断一下。。。有点菜，一个简单的东西弄得这么费劲。
+        // var hammingDistance = function(x, y) {
+        //     let a = [];
+        //     let b = [];
+        //     let q = x;
+        //     let w = y;
+        //     let i;
+        //     let j;
+
+        //     while (q != 0) {
+        //         i = q % 2;
+        //         q = Math.floor(q / 2);
+        //         a.unshift(i);
+        //     }
+        //     while (w != 0) {
+        //         j = w % 2;
+        //         w = Math.floor(w / 2);
+        //         b.unshift(j);
+        //     }
+        //     let c = 0,
+        //         d = 0;
+        //     if (a.length == b.length) {
+        //         for (let i = 0; i < b.length; i++) {
+        //             if (a[i] != b[i]) {
+        //                 c++;
+        //             }
+        //         }
+        //     }
+        //     if (a.length > b.length) {
+        //         for (let i = 0; i < b.length; i++) {
+        //             if (a[i + a.length - b.length] != b[i]) {
+        //                 c++;
+        //             }
+        //         }
+        //         for (let j = 0; j < a.length - b.length; j++) {
+        //             if (a[j] == 1) {
+        //                 d++;
+        //             }
+        //         }
+        //     } else if (a.length < b.length) {
+        //         for (let i = 0; i < a.length; i++) {
+        //             if (a[i] != b[i + b.length - a.length]) {
+        //                 c++;
+        //             }
+        //         }
+        //         console.log(c)
+        //         for (let j = 0; j < b.length - a.length; j++) {
+        //             if (b[j] == 1) {
+        //                 d++;
+        //             }
+        //         }
+        //         console.log(d)
+        //     }
+
+        //     return d + c;
+        // };
+        // let a = 15;
+        // a = a.toString(2)
+        // console.log(a);
+        let a = 'kajshudkflahf'
+        console.log(a[8]);
+    </script>
+</body>
+
+</html>
