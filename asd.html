@@ -10,39 +10,44 @@
 
 <body>
     <script>
-        function a(str1, str2) {
-            var s1 = str1.split('');
-            var s2 = str2.split('');
-            let aa = 0;
-            let c = [];
-            for (let i = 0; i < s1.length; i++) {
-                for (let j = 0; j < s2.length; j++) {
-                    let q = i;
-                    let w = j;
-                    if (s1[q] == s2[w]) {
-                        aa++;
-                        q++;
-                        w++;
-                    }
-                    var b = aa;
-                    if (aa > 0) {
-                        c.push(b);
-                        aa = 0;
-                    }
-                    i++;
-                }
-            }
-            console.log(c);
-            let l = 0;
-            for (let k = 0; k < c.length; k++) {
-                if (l < c[k]) {
-                    l = c[k]
-                }
-            }
-            console.log(l);
-            return l;
+        for (let i = 0; i < 5; i++) {
+            i--;
+            console.log(i);
         }
-        a('asdfasdfgwertyu', 'asdfwertyughasd');
+        // function a(str1, str2) {
+
+        //     var s1 = str1.split('');
+        //     var s2 = str2.split('');
+        //     let aa = 0;
+        //     let c = [];
+        //     for (let i = 0; i < s1.length; i++) {
+        //         for (let j = 0; j < s2.length; j++) {
+        //             let q = i;
+        //             let w = j;
+        //             if (s1[q] == s2[w]) {
+        //                 aa++;
+        //                 q++;
+        //                 w++;
+        //             }
+        //             var b = aa;
+        //             if (aa > 0) {
+        //                 c.push(b);
+        //                 aa = 0;
+        //             }
+        //             i++;
+        //         }
+        //     }
+        //     console.log(c);
+        //     let l = 0;
+        //     for (let k = 0; k < c.length; k++) {
+        //         if (l < c[k]) {
+        //             l = c[k]
+        //         }
+        //     }
+        //     console.log(l);
+        //     return l;
+        // }
+        // a('asdfasdfgwertyu', 'asdfwertyughasd');
         // let a = prompt()
         // let b = prompt()
         // let c = []

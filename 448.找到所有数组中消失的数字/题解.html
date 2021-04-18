@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //思路：先把创建一个数组B，然后把题目数组的数字的值别分放入B的索引及对应的值，
+        //然后看索引从1道题目数组的长度，把中间没有赋值的数组元素返回到C中，最后C就是答案。
+        var findDisappearedNumbers = function(nums) {
+
+            let b = [];
+            let c = [];
+            for (let i = 0; i < nums.length; i++) {
+                b[nums[i]] = nums[i]
+            }
+            for (let j = 1; j < nums.length + 1; j++) {
+                if (b[j] != j) {
+                    c.push(j)
+                }
+            }
+
+            return c
+        };
+    </script>
+</body>
+
+</html>
