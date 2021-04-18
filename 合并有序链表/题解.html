@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //思想：先创建一个链表链表头（-1）然后    迭代 判断   l1和l2的哪个小，哪个小先连哪个，连完后移动
+        function reverse(h1, h2) {
+            const head = new nodeList(-1);
+            let prev = head;
+            while (h1 != null && h2 != null) {
+                if (h1.val >= h2.val) {
+                    prev.next = he2;
+                    h2 = h2.next;
+                } else {
+                    prev.next = h1;
+                    h1 = h1.next;
+                }
+                prev = prev.next;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

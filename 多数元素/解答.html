@@ -10,21 +10,27 @@
 
 <body>
     <script>
-        //思想先排序，遍历搜索，只要a[i] == a[i+1] 就计数b+1一次，
+        //思想:先排序，遍历搜索，只要a[i] == a[i+1] 就计数b+1一次，
         //如果a[i] ！= a[i+1]并且 数b小于 长度的一半 就重新计数b=0; 直至b大于数组长度的一半，返回当前元素。 
-        var majorityElement = function(nums) {
-            let a = nums.sort();
-            let b = 1;
-            for (let i = 0; i < a.length; i++) {
-                if (b == Math.ceil(a.length / 2)) {
-                    return a[i]
-                } else if (a[i] == a[i + 1]) {
-                    b = b + 1;
-                } else if (a[i] != a[i + 1] && b < Math.ceil(a.length / 2)) {
-                    b = 1;
-                }
-            }
-        };
+        // var majorityElement = function(nums) {
+        //     let a = nums.sort();
+        //     let b = 1;
+        //     for (let i = 0; i < a.length; i++) {
+        //         if (b == Math.ceil(a.length / 2)) {
+        //             return a[i]
+        //         } else if (a[i] == a[i + 1]) {
+        //             b = b + 1;
+        //         } else if (a[i] != a[i + 1] && b < Math.ceil(a.length / 2)) {
+        //             b = 1;
+        //         }
+        //     }
+        // };
+        let a = 0;
+        let b = 0;
+        while (a <= 5) {
+            a++;
+            console.log(a);
+        }
     </script>
 </body>
 
