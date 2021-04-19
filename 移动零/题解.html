@@ -10,24 +10,38 @@
 
 <body>
     <script>
+        //有点投机取巧。。。
+        // var moveZeroes = function(nums) {
+        //     let a = [];
+        //     for (let i = 0; i < nums.length; i++) {
+        //         if (nums[i] != 0) {
+        //             a.push(nums[i])
+        //         }
+        //     }
+        //     for (let j = 0; j < nums.length; j++) {
+        //         if (nums[j] == 0) {
+        //             a.push(nums[j])
+        //         }
+        //     }
+        //     for (let k = 0; k < nums.length; k++) {
+        //         nums.shift();
+        //     }
+        //     console.log(a)
+        //     for (let l = 0; l < a.length; l++) {
+        //         nums[l] = a[l]
+        //     }
+
+        //     return nums;
+        // };
         var moveZeroes = function(nums) {
-            let a = [];
-            for (let i = 0; i < nums.length; i++) {
-                if (nums[i] != 0) {
-                    a.push(nums[i])
+            let j = 0;
+            for (let i = j; i < nums.length; i++) {
+                if (nums[i] !== 0) {
+                    if (i !== j) {
+                        [nums[i], nums[j]] = [nums[j], nums[i]]
+                    }
+                    j++;
                 }
-            }
-            for (let j = 0; j < nums.length; j++) {
-                if (nums[j] == 0) {
-                    a.push(nums[j])
-                }
-            }
-            for (let k = 0; k < nums.length; k++) {
-                nums.shift();
-            }
-            console.log(a)
-            for (let l = 0; l < a.length; l++) {
-                nums[l] = a[l]
             }
 
             return nums;
