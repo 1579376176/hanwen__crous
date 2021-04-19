@@ -12,21 +12,25 @@
     <script>
         //思路：先把创建一个数组B，然后把题目数组的数字的值别分放入B的索引及对应的值，
         //然后看索引从1道题目数组的长度，把中间没有赋值的数组元素返回到C中，最后C就是答案。
-        var findDisappearedNumbers = function(nums) {
+        // var findDisappearedNumbers = function(nums) {
 
-            let b = [];
-            let c = [];
-            for (let i = 0; i < nums.length; i++) {
-                b[nums[i]] = nums[i]
-            }
-            for (let j = 1; j < nums.length + 1; j++) {
-                if (b[j] != j) {
-                    c.push(j)
-                }
-            }
+        //     let b = [];
+        //     let c = [];
+        //     for (let i = 0; i < nums.length; i++) {
+        //         b[nums[i]] = nums[i]
+        //     }
+        //     for (let j = 1; j < nums.length + 1; j++) {
+        //         if (b[j] != j) {
+        //             c.push(j)
+        //         }
+        //     }
 
-            return c
-        };
+        //     return c
+        // };
+        let a = 79282882717717497329871;
+        // let res = BigInt(a) % BigInt(2) == BigInt(0)
+
+        console.log(BigInt(a));
     </script>
 </body>
 

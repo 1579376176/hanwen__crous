@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var moveZeroes = function(nums) {
+            let a = [];
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] != 0) {
+                    a.push(nums[i])
+                }
+            }
+            for (let j = 0; j < nums.length; j++) {
+                if (nums[j] == 0) {
+                    a.push(nums[j])
+                }
+            }
+            for (let k = 0; k < nums.length; k++) {
+                nums.shift();
+            }
+            console.log(a)
+            for (let l = 0; l < a.length; l++) {
+                nums[l] = a[l]
+            }
+
+            return nums;
+        };
+    </script>
+</body>
+
+</html>
