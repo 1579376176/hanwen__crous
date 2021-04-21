@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var climbStairs = function(n) {
+            if (n > 0) {
+                let i = climbStairs(n - 1);
+                let j = climbStairs(n - 2);
+                return i + j;
+            } else if (n == 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        };
+    </script>
+</body>
+
+</html>
