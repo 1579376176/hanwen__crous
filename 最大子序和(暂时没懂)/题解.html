@@ -10,15 +10,14 @@
 
 <body>
     <script>
-        var hasCycle = function(head) {
-            while (head) {
-                if (head.tag) {
-                    return true
-                }
-                head.tag = true;
-                head = head.next;
-            }
-            return false;
+        var maxSubArray = function(nums) {
+            let pre = 0,
+                maxAns = nums[0];
+            nums.forEach((x) => {
+                pre = Math.max(pre + x, x);
+                maxAns = Math.max(maxAns, pre);
+            });
+            return maxAns;
         };
     </script>
 </body>
