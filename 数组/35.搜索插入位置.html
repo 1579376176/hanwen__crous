@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索插入位置</title>
+</head>
+<body>
+    <script>
+        /**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+    if(nums.indexOf(target)>0||nums.indexOf(target)==0){
+        return nums.indexOf(target)
+    }
+    else {
+        for(const num of nums){
+            if(num>target){
+                return nums.indexOf(num)
+            }
+        }
+        return nums.length
+    }
+    
+};
+    </script>
+</body>
+</html>
