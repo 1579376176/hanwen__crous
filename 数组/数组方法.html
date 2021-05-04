@@ -12,8 +12,9 @@
         //1.concat连接2个或更多数组，并返回结果
         let a = [1,2,3];
         let b = [4,5,6];
-        a=a.concat(b);
-        
+        a=a.concat(b,[9,10,11,12,13,15,16]);
+        a.splice(1,7);
+        console.log(a);
         //2.every对数组的每一项运行函数，如果每一项都返回true则返回true
         
         // console.log(a.every(
@@ -68,7 +69,8 @@
         //12.排序sort
 
         //13.toString将数组返回字符串
-        console.log(a.valueOf());
+        // console.log(a.valueOf());
+        
     </script>
 </body>
 </html>
