@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //插入算法 思想：先定第一个数组元素为祖元素，然后遍历：：第二项到最后一项 从第二项在开始循环 ：：先把第二项的值存入temp中，然后跟前一项对比 如果前一项大
+        //就把大的那个赋值给现在那项 ，然后把temp放到原来大的元素的地方
+        function createArrayList() {
+            var array = [];
+            this.insert=function(item){
+                array.push(item)
+            }
+            this.toString  = function(){
+                return array.join();
+            }
+            this.insertSort=function(){
+                var length = array.length;
+                var temp,j;
+                for(let i = 1;i<length;i++)
+            {
+                j=i;
+                temp = array[i];
+                while(j>0&&array[j-1]>temp)
+                {
+                    array[j]=array[j-1];
+                    j--;
+                }
+                array[j] = temp;
+
+            }
+            }
+            
+        }
+    </script>
+</body>
+</html>
