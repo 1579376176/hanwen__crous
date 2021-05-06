@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 实现一个冒泡排序 -->
+    <script>
+        function ArrayList() {
+            var array = [];
+            this.insert = function(item) {
+                array.push(item);
+            };
+            this.toString = function() {
+                return array.join();
+            };
+            this.bubbleSort = function() {
+                for (let i = 0; i < array.length; i++) {
+                    //可以改进 ，在J中在减去i eg: j < array.length - 1 -i
+                    for (let j = 0; j < array.length - 1; j++) {
+                        swap(j, j + 1);
+                    }
+                }
+            };
+            var swap = function(index1, index2) {
+                if (array[index1] > array[index2]) {
+                    var aux = array[index1];
+                    array[index1] = array[index2];
+                    array[index2] = aux;
+
+                }
+            }
+        }
+
+        function createNonSortArray(size) {
+            var a = new ArrayList();
+            for (let i = size; i > 0; i--) {
+                a.insert(i)
+            }
+            return a;
+        }
+        var array = createNonSortArray(5);
+        console.log(array.toString());
+        array.bubbleSort();
+        console.log(array.toString());
+    </script>
+</body>
+
+</html>
