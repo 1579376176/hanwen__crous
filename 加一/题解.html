@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //自己写的，不对
+var plusOne = function(digits) {
+    let length =digits.length
+    let b = digits[length-1];
+    if(b==9){
+        if(digits[length-2]){
+            digits[length-2] = digits[length-2]+1
+            digits[length-1] = 0
+        }
+        else{
+            digits[length-1] = 0
+            digits.unshift(1)
+        }
+        
+    }
+    else{
+         digits[length-1] =  digits[length-1]+1
+    }
+    // let a = digits.join('')
+
+    // a=a-1;
+    // a=a+1;
+
+    // a=a+''
+    // a=a.split('')
+    return digits 
+};
+
+//官方
+var plusOne = function(digits) {
+    const len = digits.length;
+    for(let i = len - 1; i >= 0; i--) {
+        digits[i]++;
+        digits[i] %= 10;
+        if(digits[i]!=0)
+            return digits;
+    }
+    digits = [...Array(len + 1)].map(_=>0);;
+    digits[0] = 1;
+    return digits;
+};
+
+
+    </script>
+</body>
+</html>
