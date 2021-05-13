@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+//待解决，结果为什么会多一个0  淦！！！！
+var addTwoNumbers = function(l1, l2) {
+    var ln = new ListNode()
+    var l3 = ln
+    var cur = l3
+    while(l1!=null||l2!=null){
+        if(!l1&&l2.next){
+            var l4 = new ListNode()
+            cur.next = l4;
+            cur.val = 0+l2.val;
+        }
+        else if(!l2&&l1.next){
+            var l4 = new ListNode()
+            l4.next = null
+            cur.next = l4;
+            cur.val = l1.val+0;
+        }
+        else if(l1&&l2){
+            var l4 = new ListNode()
+            l4.next = null
+            cur.next = l4;
+            cur.val = l1.val+l2.val;
+        }
+        if(l1){
+           l1 = l1.next; 
+        }
+        if(l2){
+            l2 = l2.next;
+        }
+        cur=cur.next;
+    }
+    while(l3.next!=null){
+        if(l3.val >= 10){
+            l3.val = l3.val - 10;
+            if(l3.next){
+                l3.next.val = l3.next.val + 1;
+            }
+        }
+        l3 = l3.next
+    }
+    return ln
+};
+    </script>
+</body>
+</html>
