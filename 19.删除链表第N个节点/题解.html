@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除链表的第N个节点</title>
+</head>
+<body>
+    <script>
+        /**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+ //收获：删除链表中的节点的时候 要判断删除的是第一位 还是其他！！！！！！！！
+var removeNthFromEnd = function(head, n) {
+    let cur = head;
+    let a = 0;
+    while(cur){
+
+        a++;
+        cur = cur.next;
+    }
+    if(a==1){
+        
+        return null
+    }
+    if(a==n){
+        return head.next
+    }
+    let b = 1;
+    let cur1 = head
+    while(cur1){
+        if(b+n == a){
+
+            let pre = cur1.next;
+            cur1.next = pre.next;
+            pre.next = null
+        }
+        b++;
+        cur1 = cur1.next;
+    }
+    
+return head
+};
+    </script>
+</body>
+</html>
