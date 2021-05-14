@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="cc">加加加</button>
+    <script>
+        function pro() {
+            return new Promise(function (resolve,reject) {
+                console.log('崔瀚文大好人哈哈哈哈哈！！！');
+                reject('dyx')
+            })
+        }
+        pro().then(function (a) {
+            console.log(a);
+        }).catch(function (a) {
+            console.log(a+' 哇咔咔！！！！');
+            reject('陈继远')
+        }).then(function () {
+            console.log('asd');
+        }).catch(function (a) {
+            console.log(a+'Error');
+        })
+        console.log(this);
+    </script>
+</body>
+</html>
