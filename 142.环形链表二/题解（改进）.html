@@ -9,7 +9,7 @@
 <body>
     <script>
         //这次使用了es6新增的set数据结构，这里面会去除重复的。
-        var detectCycle = function(head, pos) {
+        var detectCycle = function(head) {
         let cur = head;
         let arr = new Set();
         while( cur ){
@@ -17,11 +17,13 @@
                 return cur;
             }else{
             arr.add(cur) ;
+            console.log(arr);
             }
         cur = cur.next;
         }
     return null;
-};
+    };
+    detectCycle([4,5,6,11,16,19,54,62]);
     </script>
 </body>
 </html>
