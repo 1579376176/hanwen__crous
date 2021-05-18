@@ -15,12 +15,12 @@
             let index;
             if(arr.length>1){
                 index = partition(arr,left,right)
-                if(left<index-1){
+            if(left<index-1){
                 quick(arr,left,index-1)
-                }
-                if(index<right){
+            }
+            if(index<right){
                 quick(arr,index,right)
-                }
+            }
             }
             
         }
@@ -41,8 +41,9 @@
                 j--
             }
             }
-            
+            console.log(i);
             return i
+            
         }
         function swap(arr,i,j) {
             let a = arr[i]
@@ -50,7 +51,6 @@
             arr[j] = a
         }
         let a = [3,5,1,6,4,7,2]
-        console.log(a);
         quicksort(a)
         console.log(a);
     </script>

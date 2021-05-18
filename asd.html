@@ -10,10 +10,31 @@
 
 <body>
     <script>
-        for (let i = 0; i < 5; i++) {
-            i--;
-            console.log(i);
+        // function name() {
+        //     console.log('1');
+        //     setTimeout(function () {
+        //         console.log('2');
+        //     },5)
+            
+        // }
+        // for(var i =0;i<1234;i++){
+        //     name()
+        // }
+        var color = 'green'
+        var test123 = {
+            color:"blue",
+            getColor:function(){
+                var color = 'red'
+                console.log(this.color);
+            }
         }
+        var getColor = test123.getColor
+        getColor()
+        test123.getColor()
+        // for (let i = 0; i < 5; i++) {
+        //     i--;
+        //     console.log(i);
+        // }
         // function a(str1, str2) {
 
         //     var s1 = str1.split('');

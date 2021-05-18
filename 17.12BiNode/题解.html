@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <SCript>
+        /**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+        /**
+         * @param {TreeNode} root
+         * @return {TreeNode}
+         */
+        var convertBiNode = function (root) {
+            function ListNode(val) {
+                this.val = val;
+                this.next = null;
+            }
+            function callback(a) {
+                head.next = new ListNode(a);
+                head = head.next
+                console.log(as)
+            }
+            let as = new ListNode()
+            let head = as
+            function part(node) {
+                if (node != null) {
+                    part(node.left)
+                    callback(node.val)
+                    part(node.right)
+                    return as
+                }
+            }
+            part(root)
+
+        };
+    </SCript>
+</body>
+
+</html>
