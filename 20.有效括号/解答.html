@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+ * @param {string} s
+ * @return {boolean}
+ */
+        var isValid = function (s) {
+            let i = 0;
+            let res = []
+            //如果不是偶数，直接返回false
+            if (s.length % 2 != 0) {
+                return false
+            }
+            //如果第一位是 三个其中一个 直接返回false
+            if (s[0] == ')' || s[0] == '}' || s[0] == ']') {
+                return false
+            }
+            //采用栈数据结构，如果是左括号每次入栈，如果碰到右括号判断是否是第一位
+            while (i < s.length) {
+                if (s[i] == '(') {
+                    res.unshift(')')
+                }
+                else if (s[i] == '[') {
+                    res.unshift(']')
+                }
+                else if (s[i] == '{') {
+                    res.unshift('}')
+                }
+                else {
+                    if (s[i] == res[0]) {
+                        res.shift()
+                    }
+                    else {
+                        return false
+                    }
+                }
+                i++;
+            }
+            //最后看栈中是否有值，有值则false 无值则true
+            if (res[0]) {
+                return false
+            } else {
+                return true
+            }
+
+
+        };
+    </script>
+</body>
+
+</html>
