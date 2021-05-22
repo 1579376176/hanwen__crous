@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        this.d = '崔瀚文'
+        let a = {
+            aa:16,
+            d:'崔思博',
+            e:this,
+            bb:function(){
+                console.log('this',this);
+                console.log(this.d);
+            }
+        }
+        a.bb();
+    </script>
+</body>
+</html>
