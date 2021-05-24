@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function quicksort(left,right,arr) {
+            let index;
+            if(arr.length>1){
+                index = port(left,right,arr)
+                if(left<index-1){
+                quicksort(left,index-1,arr)
+                }
+                if(index<right){
+                quicksort(index,right,arr)
+                }
+            }
+        }
+        var port = function (left,right,arr1) {
+            //存索引的问题，主元如果要交换，则第二次的主元会发生变化！！！！ 以下是错误，q是正确的，否则虽然能够使用，但对于一些交换时需要换主元的时候也不会成功。
+            const zhuyuan = Math.floor((left+right)/2)
+            let q = arr1[Math.floor((left+right)/2)]
+            console.log(arr1[zhuyuan]);
+                console.log(q);
+            let i = left;
+            let j = right;
+            while(i<=j){
+        
+                while(arr1[i]<arr1[zhuyuan]){
+                    i++
+                }
+                while(arr1[j]>arr1[zhuyuan]){
+                    j--
+                }
+                if(i<=j){
+                swap(i,j,arr1)
+                i++;
+                j--;
+                }
+            }
+            return i
+        }
+        function swap(a,b,arr) {
+            let c = arr[a];
+            arr[a] = arr[b];
+            arr[b] = c;
+        }
+        let a = [3,5,2,1,6,4,7,2]
+        quicksort(0,a.length-1,a)
+        console.log(a);
+    </script>
+</body>
+</html>
