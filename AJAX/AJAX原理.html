@@ -26,13 +26,12 @@
         xmlhttp.send("");  
         //服务器响应
         xmlhttp.onreadystatechange = function () {
-            if(xmlhttp.status==20&&xmlhttp.readystate == 4)
+            if(xmlhttp.status==200&&xmlhttp.readystate == 4)
             {
+                console.log(xmlhttp.status);
                 document.getElementById('myDiv').innerHTML = xmlhttp.ResponseText;
             }
-            
         }
-
     </script>
 </body>
 </html>

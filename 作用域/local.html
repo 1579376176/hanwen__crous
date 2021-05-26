@@ -36,18 +36,33 @@
 // var x = fn(),
 // b = 200
 // x()
-var x = 10
-function fn () {
-  console.log(x)  // ？  
+// var x = 10
+// function fn () {
+//   console.log(x)  // ？  
+// }
+// function show (f) {
+//   var x = 20;
+//     (function() {
+//       console.log(x);
+//       f()
+//     })()
+// }
+// show(fn)
+
+console.log(this);
+class C {
+  a() {
+    console.log(this);
+  }
+  b = () => {
+    console.log(this);
+  };
 }
-function show (f) {
-  var x = 20;
-    (function() {
-      console.log(x);
-      f()
-    })()
-}
-show(fn)
+c = new C();
+c.a();
+f = c.a;
+f();
+c.b();
     </script>
     
 </body>

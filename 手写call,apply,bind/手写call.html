@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        Function.prototype._call = function (context) {
+            var context = Object(context)||window
+            context.fn = this
+            let args = [];
+            for(let i = 1 , len = arguments.length;i<len;i++){
+                args.push(arguments[i])
+            }
+            context.fn(...args)
+            delete context.fn
+        }
+        Array.prototype.slice.call(1)
+       
+    </script>
+</body>
+</html>
