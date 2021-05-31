@@ -10,6 +10,18 @@
 
 <body>
     <script>
+        function A() {
+            
+        }
+        A.prototype.name = function () {
+            console.log('123456');
+        }
+        function B() {
+            
+        }
+        B.prototype.name = A.prototype.name
+        var b = new B()
+        console.log(b.name());
         // function name() {
         //     console.log('1');
         //     setTimeout(function () {
@@ -20,17 +32,17 @@
         // for(var i =0;i<1234;i++){
         //     name()
         // }
-        var color = 'green'
-        var test123 = {
-            color:"blue",
-            getColor:function(){
-                var color = 'red'
-                console.log(this.color);
-            }
-        }
-        var getColor = test123.getColor
-        getColor()
-        test123.getColor()
+        // var color = 'green'
+        // var test123 = {
+        //     color:"blue",
+        //     getColor:function(){
+        //         var color = 'red'
+        //         console.log(this.color);
+        //     }
+        // }
+        // var getColor = test123.getColor
+        // getColor()
+        // test123.getColor()
         // for (let i = 0; i < 5; i++) {
         //     i--;
         //     console.log(i);
