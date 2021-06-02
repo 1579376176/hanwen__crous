@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            age:18
+        }
+        Object.defineProperty(a,'name',{ //往a对象加入name属性，
+            value:'崔瀚文',               //值为崔瀚文
+            writable:true,                  //属性可否重写默认false（不让重写）
+            enumerable:true,                //这个属性是否可以枚举（） 默认也不让
+            configurable:true,              //这个属性可否修改（再次Object.defineproperty）/删除  默认不让
+        })
+        Object.defineProperty(a,'age',{//get和set不能喝value和writable一起用
+            get:function(value){
+                console.log(value);
+                return value
+            },
+            set:function(newVal){
+                console.log('崔瀚文大好人哈哈哈~');
+            }
+        })
+        a.age;
+        // let b = Object.keys(a)
+        a.name = '123456'
+        // console.log(a.name);
+        // console.log(a);
+    </script>
+</body>
+</html>
