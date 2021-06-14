@@ -14,7 +14,7 @@
         var quick = function(arr,left,right) {
             let index;
             if(arr.length>1){
-                index = partition(arr,left,right)
+                index = partition(arr,left,right)//设置主元
             if(left<index-1){
                 quick(arr,left,index-1)
             }
